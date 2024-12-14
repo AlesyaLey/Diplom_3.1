@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: src.RegistrationUserTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 19.159 s <<< FAILURE! - in src.RegistrationUserTest
+testRegistrationYandex(src.RegistrationUserTest)  Time elapsed: 6.592 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+Element <a class="AppHeader_header__link__3D_hX" href="/account"> is not clickable at point (1176,44) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.7.12-x64v4-xanmod1', java.version: '11.0.25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [76aba6f9-c86c-4679-8335-900705b90b48, clickElement {id=da6e609a-156a-4d46-88a3-79924fab326b}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 132.0.1, moz:accessibilityChecks: false, moz:buildID: 20241103194048, moz:debuggerAddress: 127.0.0.1:17003, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.7.12-x64v4-xanmod1, moz:processID: 33148, moz:profile: /tmp/rust_mozprofileCb2xqs, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:17003/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Linux x86...}
+Element: [[FirefoxDriver: firefox on linux (76aba6f9-c86c-4679-8335-900705b90b48)] -> xpath: //a[@class='AppHeader_header__link__3D_hX' and @href='/account']]
+Session ID: 76aba6f9-c86c-4679-8335-900705b90b48
+	at src.RegistrationUserTest.testRegistrationYandex(RegistrationUserTest.java:102)
+
