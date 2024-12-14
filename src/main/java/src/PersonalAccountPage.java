@@ -51,4 +51,5 @@ public class PersonalAccountPage {
     public void clickCancellButton (){
         driver.findElement(cancellButton).click();
     }
+
 }

@@ -59,5 +59,4 @@ public class MainPage {
         return driver.findElement(bunTab).getAttribute("class");
     }
 
-
 }

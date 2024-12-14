@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: src.ConstructorTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 22.91 s <<< FAILURE! - in src.ConstructorTest
-testClickBunTabYandex(src.ConstructorTest)  Time elapsed: 6.008 s  <<< FAILURE!
-java.lang.AssertionError
-	at src.ConstructorTest.testClickBunTabYandex(ConstructorTest.java:85)
-
-testClickIngredientsTabYandex(src.ConstructorTest)  Time elapsed: 4.72 s  <<< FAILURE!
-java.lang.AssertionError
-	at src.ConstructorTest.testClickIngredientsTabYandex(ConstructorTest.java:119)
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.319 s - in src.ConstructorTest

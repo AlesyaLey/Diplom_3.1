@@ -10,7 +10,6 @@ import org.junit.After;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Step;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
 
 @DisplayName("Конструктор")

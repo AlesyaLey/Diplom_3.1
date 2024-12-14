@@ -135,4 +135,5 @@ public class RegistrationUserTest {
     public void tearDown(){
         driver.quit();
     }
+
 }

@@ -22,5 +22,4 @@ public class RecoverPasswordPage {
         WebElement element = driver.findElement(loginButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
     }
-
 }

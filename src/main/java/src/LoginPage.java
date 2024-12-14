@@ -51,4 +51,5 @@ public class LoginPage {
     public String getLoginPageTitle() {
         return driver.findElement(loginPageInputFieldsTitle).getText();
     }
+
 }

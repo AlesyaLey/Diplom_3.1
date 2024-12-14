@@ -190,4 +190,5 @@ public class PersonalAccountTestAll {
     public void tearDown(){
         driver.quit();
     }
+
 }
