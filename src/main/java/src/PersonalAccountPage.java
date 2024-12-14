@@ -16,7 +16,6 @@ public class PersonalAccountPage {
     private By saveButton = By.xpath("//*[@id=\"root\"]/div/main/div/div/div/div/button[2]");//исправить
     private By cancellButton = By.xpath("//*[@id=\"root\"]/div/main/div/div/div/div/button[1]");
 
-
     public PersonalAccountPage(WebDriver driver){
         this.driver = driver;
     }

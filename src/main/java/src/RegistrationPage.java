@@ -60,5 +60,4 @@ public class RegistrationPage {
         WebElement element = driver.findElement(signInButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
     }
-
 }

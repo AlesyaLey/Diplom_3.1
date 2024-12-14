@@ -166,10 +166,9 @@ public class LoginTest {
         assertNotNull(mainPage.waitCreateOrderButtonVisible());
     }
 
-@After
-@Step("Close browser")
-public void tearDown(){
+    @After
+    @Step("Close browser")
+    public void tearDown(){
     driver.quit();
 }
-
 }

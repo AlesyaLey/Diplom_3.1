@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.junit.Test;
 import org.junit.After;

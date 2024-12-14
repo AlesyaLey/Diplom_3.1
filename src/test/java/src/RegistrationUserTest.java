@@ -107,6 +107,7 @@ public class RegistrationUserTest {
         assertEquals(email.toLowerCase(), accountEmail);
         personalAccountPage.clickLogoutButton();
     }
+
     @Test
 
     @DisplayName("Регистрация в Yandex")
