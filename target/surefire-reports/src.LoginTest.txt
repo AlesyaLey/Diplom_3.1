@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: src.LoginTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 27.998 s <<< FAILURE! - in src.LoginTest
-testLoginRecoverPasswordPageYandex(src.LoginTest)  Time elapsed: 3.906 s  <<< ERROR!
-org.openqa.selenium.ElementClickInterceptedException: 
-Element <a class="Auth_link__1fOlj" href="/login"> is not clickable at point (726,581) because another element <div class="Modal_modal_overlay__x2ZCr"> obscures it
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.7.12-x64v4-xanmod1', java.version: '11.0.25'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [ad2d0ece-32f9-4555-af2f-f09498da3948, clickElement {id=d2506082-3e89-4e90-b09e-c5e3a49a3a45}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 132.0.1, moz:accessibilityChecks: false, moz:buildID: 20241103194048, moz:debuggerAddress: 127.0.0.1:30592, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.7.12-x64v4-xanmod1, moz:processID: 44751, moz:profile: /tmp/rust_mozprofile4lS6pQ, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://127.0.0.1:30592/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Linux x86...}
-Element: [[FirefoxDriver: firefox on linux (ad2d0ece-32f9-4555-af2f-f09498da3948)] -> class name: Auth_link__1fOlj]
-Session ID: ad2d0ece-32f9-4555-af2f-f09498da3948
-	at src.LoginTest.testLoginRecoverPasswordPageYandex(LoginTest.java:162)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.358 s - in src.LoginTest

@@ -12,6 +12,7 @@ public class MainPage {
     private WebDriver driver;
 
     private By personalAccountButton = By.xpath("//a[@class='AppHeader_header__link__3D_hX' and @href='/account']");
+    //private By personalAccountButton = By.xpath(".//*[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Личный Кабинет']");
     private By enterToAccountButton = By.className("button_button__33qZ0");
     private By createOrderButton = By.className("button_button__33qZ0");
     private By bunTab = By.xpath("//span[text()='Булки']/..");

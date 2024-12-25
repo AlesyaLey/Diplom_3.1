@@ -1,6 +1,9 @@
+api/UserReq.class
 src/RegistrationPage.class
 src/RecoverPasswordPage.class
 src/PersonalAccountPage.class
 src/MainPage.class
 src/LoginPage.class
+api/AuthorizationReq.class
 src/ConstructorPage.class
+api/MainStellarBurgersApi.class

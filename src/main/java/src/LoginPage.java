@@ -7,8 +7,11 @@ public class LoginPage {
     private WebDriver driver;
 
     private By emailField = By.xpath("//label[text()='Email']/following-sibling::input");
+    //private By emailField = By.xpath("//label[text()='Email']/../input");
     private By passwordField = By.xpath("//label[text()='Пароль']/following-sibling::input");
-    private By signInButton = By.xpath("//button[text()='Войти']");
+    //private By signInButton = By.xpath("//button[text()='Войти']");
+    private By signInButton = By.className("button_button_size_medium__3zxIa");
+
     private By registrationButton = By.xpath("//a[text()='Зарегистрироваться']");
     private By resetPasswordButton = By.xpath("//a[text()='Восстановить пароль']");
     private By passwordErrorMessage = By.xpath("//p[text()='Некорректный пароль']");

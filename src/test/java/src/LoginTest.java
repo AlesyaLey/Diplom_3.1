@@ -17,7 +17,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class LoginTest {
 
     private WebDriver driver;
-
+    private static final String STELLABURGERS_URL = "https://stellarburgers.nomoreparties.site";
+    private static final String REGISTRER_URL = "https://stellarburgers.nomoreparties.site/register";
+    private static final String FOGOTPASS_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
     private final String email = RandomStringUtils.randomAlphabetic(9) + "@example.ru";
     private final String password = "password";
 
@@ -27,10 +29,10 @@ public class LoginTest {
     @Description("Успешный вход через кнопку «Личный кабинет»")
     @Step("Вход через кнопку «Личный кабинет»")
     public void testLoginPersonalAccountButtonChrome(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        String env = System.getProperty("browser", "chrome");
+        driver = DriverProperties.getDriver(env);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(STELLABURGERS_URL);
         MainPage mainPage = new MainPage(driver);
         mainPage.clickPersonalAccountButton();
         LoginPage loginPage = new LoginPage(driver);
@@ -43,10 +45,10 @@ public class LoginTest {
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной")
     @Step("Вход по кнопке «Войти в аккаунт» на главной")
     public void testLoginEnterAccountButtonChrome(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        String env = System.getProperty("browser", "chrome");
+        driver = DriverProperties.getDriver(env);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(STELLABURGERS_URL);
         MainPage mainPage = new MainPage(driver);
         mainPage.clickEnterToAccountButton();
         LoginPage loginPage = new LoginPage(driver);
@@ -59,10 +61,10 @@ public class LoginTest {
     @DisplayName("Вход через кнопку в форме регистрации")
     @Step("Вход через кнопку в форме регистрации")
     public void testLoginRegistrationFormChrome(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        String env = System.getProperty("browser", "chrome");
+        driver = DriverProperties.getDriver(env);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/register");
+        driver.get(REGISTRER_URL);
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.scrollToLoginButton();
         registrationPage.clickLoginButton();
@@ -77,86 +79,10 @@ public class LoginTest {
     @DisplayName("Вход через кнопку в форме восстановления пароля")
     @Step("Вход через кнопку в форме восстановления пароля")
     public void testLoginRecoverPasswordPageChrome(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        String env = System.getProperty("browser", "chrome");
+        driver = DriverProperties.getDriver(env);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/forgot-password");
-        RecoverPasswordPage recoverPasswordPage = new RecoverPasswordPage(driver);
-        recoverPasswordPage.scrollToLoginButton();
-        recoverPasswordPage.clickLoginButton();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(email, password);
-        MainPage mainPage = new MainPage(driver);
-        assertNotNull(mainPage.waitCreateOrderButtonVisible());
-    }
-
-   @Test
-
-    @DisplayName("Вход через кнопку «Личный кабинет»")
-    @Description("Успешный вход через кнопку «Личный кабинет»")
-    @Step("Вход через кнопку «Личный кабинет»")
-    public void testLoginPersonalAccountButtonYandex(){
-      // System.setProperty("webdriver.chrome.driver","src/java/resources/yandexdriver.exe");
-       // driver = new ChromeDriver();
-        WebDriverManager.firefoxdriver().setup();
-       driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/");
-        MainPage mainPage = new MainPage(driver);
-        mainPage.clickPersonalAccountButton();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(email, password);
-        assertNotNull(mainPage.waitCreateOrderButtonVisible());
-    }
-
-    @Test
-
-    @DisplayName("Вход по кнопке «Войти в аккаунт» на главной")
-    @Step("Вход по кнопке «Войти в аккаунт» на главной")
-    public void testLoginEnterAccountButtonYandex(){
-        //System.setProperty("webdriver.yandex.driver","src/java/resources/yandexdriver.exe");
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        //driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/");
-        MainPage mainPage = new MainPage(driver);
-        mainPage.clickEnterToAccountButton();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(email, password);
-        assertNotNull(mainPage.waitCreateOrderButtonVisible());
-    }
-
-    @Test
-
-    @DisplayName("Вход через кнопку в форме регистрации")
-    @Step("Вход через кнопку в форме регистрации")
-    public void testLoginRegistrationFormYandex(){
-        //System.setProperty("webdriver.chrome.driver","/src/main/resources/yandexdriver.exe");
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/register");
-        RegistrationPage registrationPage = new RegistrationPage(driver);
-        registrationPage.scrollToLoginButton();
-        registrationPage.clickLoginButton();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(email, password);
-        MainPage mainPage = new MainPage(driver);
-        assertNotNull(mainPage.waitCreateOrderButtonVisible());
-    }
-
-    @Test
-
-    @DisplayName("Вход через кнопку в форме восстановления пароля")
-    @Step("Вход через кнопку в форме восстановления пароля")
-    public void testLoginRecoverPasswordPageYandex(){
-        //System.setProperty("webdriver.chrome.driver","src/java/resources/yandexdriver.exe");
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        //driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://stellarburgers.nomoreparties.site/forgot-password");
+        driver.get(FOGOTPASS_URL);
         RecoverPasswordPage recoverPasswordPage = new RecoverPasswordPage(driver);
         recoverPasswordPage.scrollToLoginButton();
         recoverPasswordPage.clickLoginButton();

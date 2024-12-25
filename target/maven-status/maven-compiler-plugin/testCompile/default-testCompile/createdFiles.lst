@@ -1,4 +1,5 @@
 src/ConstructorTest.class
+src/PersonalAccountAllTest.class
 src/LoginTest.class
-src/PersonalAccountTestAll.class
+src/DriverProperties.class
 src/RegistrationUserTest.class
