@@ -72,8 +72,7 @@ public class RegistrationUserTest {
         assertEquals(name, accountName);
         assertEquals(email.toLowerCase(), accountEmail);
         personalAccountPage.clickLogoutButton();
-        String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(userReq.toString());
     }
 
     @Test
@@ -92,8 +91,8 @@ public class RegistrationUserTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickRegistrationButton();
         RegistrationPage registrationPage = new RegistrationPage(driver);
-        String Error = registrationPage.waitPasswordErrorVisible(password).getText();
-        assertEquals("Некорректный пароль",Error);
+        String registrationError = registrationPage.waitPasswordErrorVisible(password).getText();
+        assertEquals("Некорректный пароль",registrationError);
     }
 
     @After

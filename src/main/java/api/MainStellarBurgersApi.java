@@ -12,6 +12,8 @@ import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 public class MainStellarBurgersApi {
 
     private final Header contentTypeHeader = new Header(CONTENT_TYPE, APPLICATION_JSON.getMimeType());
+    private static final String PATH = "/api/auth/user";
+    private static final String REGISER = "/api/auth/register";
 
     public MainStellarBurgersApi() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
@@ -23,7 +25,7 @@ public class MainStellarBurgersApi {
                 .header(contentTypeHeader)
                 .body(userReq)
                 .when()
-                .post("https://stellarburgers.nomoreparties.site/api/auth/register");
+                .post(REGISER);
 
         return response.getBody().jsonPath().getString("accessToken");
     }
@@ -44,6 +46,6 @@ public class MainStellarBurgersApi {
                  given()
                 .header(authHeader)
                 .when()
-                .delete("https://stellarburgers.nomoreparties.site/api/auth/user");
+                .delete(PATH);
     }
 }

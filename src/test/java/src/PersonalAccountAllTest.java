@@ -48,9 +48,9 @@ public class PersonalAccountAllTest {
         MainPage mainPage = new MainPage(driver);
         mainPage.clickPersonalAccountButton();
         assertEquals(LOGIN_URL, driver.getCurrentUrl());
-        userReq = new UserReq(name,email,password);
+       /* userReq = new UserReq(name,email,password);
         String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(token);*/
     }
 
     @Test
@@ -68,9 +68,9 @@ public class PersonalAccountAllTest {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
         personalAccountPage.clickConstructorButton();
         assertEquals(STELLABURGERS_URL, driver.getCurrentUrl());
-        userReq = new UserReq(name,email,password);
+       /* userReq = new UserReq(name,email,password);
         String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(token);*/
     }
 
     @Test
@@ -89,9 +89,9 @@ public class PersonalAccountAllTest {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
         personalAccountPage.clickStellarBurgersLogo();
         assertEquals(STELLABURGERS_URL, driver.getCurrentUrl());
-        userReq = new UserReq(name,email,password);
+        /*userReq = new UserReq(name,email,password);
         String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(token);*/
     }
 
     @Test
@@ -111,9 +111,9 @@ public class PersonalAccountAllTest {
         personalAccountPage.clickLogoutButton();
         String name = loginPage.getLoginPageTitle().toString();
         assertEquals("Вход", name);
-        userReq = new UserReq(name,email,password);
+      /*  userReq = new UserReq(name,email,password);
         String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(token);*/
     }
 
 
@@ -133,9 +133,9 @@ public class PersonalAccountAllTest {
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
         personalAccountPage.clickLogoutButton();
         assertEquals(LOGIN_URL, driver.getCurrentUrl());
-        userReq = new UserReq(name,email,password);
+       /* userReq = new UserReq(name,email,password);
         String token = api.createUser(userReq);
-        api.deleteUser(token);
+        api.deleteUser(token);*/
     }
 
     @After
