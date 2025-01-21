@@ -33,6 +33,7 @@ public class RegistrationUserTest {
     private static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
     private UserReq userReq;
     private MainStellarBurgersApi api;
+    private String token=null;
 
 
     @Before
@@ -62,6 +63,7 @@ public class RegistrationUserTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registration(name, email, password);
         userReq = new UserReq(name, email, password);
+        token = api.createUser(userReq);
         registrationPage.clickRegistrationButton();
         mainPage.clickPersonalAccountButton();
         loginPage.login(email, password);
@@ -72,7 +74,7 @@ public class RegistrationUserTest {
         assertEquals(name, accountName);
         assertEquals(email.toLowerCase(), accountEmail);
         personalAccountPage.clickLogoutButton();
-        api.deleteUser(userReq.toString());
+        api.deleteUser(token);
     }
 
     @Test

@@ -1,9 +1,13 @@
 package src;
 
+import api.MainStellarBurgersApi;
+import api.SaveToken;
+import api.UserReq;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import static org.junit.Assert.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,6 +27,17 @@ public class LoginTest {
     private final String email = RandomStringUtils.randomAlphabetic(9) + "@example.ru";
     private final String password = "password";
 
+    @Before
+    @Step("Создание пользователя")
+    public void creatUser(){
+        UserReq userReq = new UserReq("test",email,password);
+        MainStellarBurgersApi api = new MainStellarBurgersApi();
+        String token = api.createUser(userReq);
+        SaveToken saveToken = new SaveToken();
+        saveToken.setToken(token);
+
+    }
+
     @Test
 
     @DisplayName("Вход через кнопку «Личный кабинет»")
@@ -33,6 +48,7 @@ public class LoginTest {
         driver = DriverProperties.getDriver(env);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(STELLABURGERS_URL);
+
         MainPage mainPage = new MainPage(driver);
         mainPage.clickPersonalAccountButton();
         LoginPage loginPage = new LoginPage(driver);
@@ -95,7 +111,11 @@ public class LoginTest {
     @After
     @Step("Close browser")
     public void tearDown(){
-    driver.quit();
+        SaveToken saveToken = new SaveToken();
+        String token = saveToken.getToken();
+        MainStellarBurgersApi api = new MainStellarBurgersApi();
+        api.deleteUser(token);
+        driver.quit();
 }
 
 }
