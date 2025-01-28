@@ -1,21 +1,18 @@
 package src;
 
 import api.MainStellarBurgersApi;
-import api.SaveToken;
 import api.UserReq;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import static org.junit.Assert.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Step;
 import java.util.concurrent.TimeUnit;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 @DisplayName("Логирование - Вход")
 public class LoginTest {
@@ -26,17 +23,9 @@ public class LoginTest {
     private static final String FOGOTPASS_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
     private final String email = RandomStringUtils.randomAlphabetic(9) + "@example.ru";
     private final String password = "password";
-
-    @Before
-    @Step("Создание пользователя")
-    public void creatUser(){
-        UserReq userReq = new UserReq("test",email,password);
-        MainStellarBurgersApi api = new MainStellarBurgersApi();
-        String token = api.createUser(userReq);
-        SaveToken saveToken = new SaveToken();
-        saveToken.setToken(token);
-
-    }
+    UserReq userReq = new UserReq("test",email,password);
+    MainStellarBurgersApi api = new MainStellarBurgersApi();
+    String token = api.createUser(userReq);
 
     @Test
 
@@ -111,9 +100,6 @@ public class LoginTest {
     @After
     @Step("Close browser")
     public void tearDown(){
-        SaveToken saveToken = new SaveToken();
-        String token = saveToken.getToken();
-        MainStellarBurgersApi api = new MainStellarBurgersApi();
         api.deleteUser(token);
         driver.quit();
 }

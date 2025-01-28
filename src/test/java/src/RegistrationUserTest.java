@@ -34,9 +34,10 @@ public class RegistrationUserTest {
     private UserReq userReq;
     private MainStellarBurgersApi api;
     private String token=null;
+    AuthorizationReq authorizationReq;
 
 
-    @Before
+   @Before
 
     @Step("Создать случайного пользователя")
     public void createRegistrationData(){
@@ -62,8 +63,9 @@ public class RegistrationUserTest {
         loginPage.clickRegistrationButton();
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registration(name, email, password);
-        userReq = new UserReq(name, email, password);
-        token = api.createUser(userReq);
+        authorizationReq = new AuthorizationReq(email, password);
+        token = api.loginUser(authorizationReq);
+        System.out.println("Access token   "+ token);
         registrationPage.clickRegistrationButton();
         mainPage.clickPersonalAccountButton();
         loginPage.login(email, password);

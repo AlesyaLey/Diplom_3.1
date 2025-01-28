@@ -14,6 +14,7 @@ public class MainStellarBurgersApi {
     private final Header contentTypeHeader = new Header(CONTENT_TYPE, APPLICATION_JSON.getMimeType());
     private static final String PATH = "/api/auth/user";
     private static final String REGISER = "/api/auth/register";
+    private static final String LOGIN = "/api/auth/login";
 
     public MainStellarBurgersApi() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
@@ -29,23 +30,25 @@ public class MainStellarBurgersApi {
 
         return response.getBody().jsonPath().getString("accessToken");
     }
-/*
+
     @Step("Авторизация пользователя")
     public String loginUser(AuthorizationReq authorizationReq) {
         Response response = given()
                 .header(contentTypeHeader)
                 .body(authorizationReq)
                 .when()
-                .post("https://stellarburgers.nomoreparties.site/api/auth/login");
+                .post(LOGIN);
         return response.getBody().jsonPath().getString("accessToken");
     }
-*/
+
     @Step("Удаление пользователя")
     public void deleteUser(String accessToken) {
+       // System.out.println(" Delete token" + accessToken);
         Header authHeader = new Header(AUTHORIZATION, accessToken);
                  given()
                 .header(authHeader)
                 .when()
                 .delete(PATH);
+
     }
 }

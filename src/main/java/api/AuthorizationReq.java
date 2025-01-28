@@ -4,7 +4,7 @@ public class AuthorizationReq {
     private  String email;
     private  String password;
 
-    public void authorizationReq(String email, String password) {
+    public AuthorizationReq(String email, String password) {
         this.email = email;
         this.password = password;
     }
@@ -16,4 +16,5 @@ public class AuthorizationReq {
     public String getPassword() {
         return password;
     }
+
 }

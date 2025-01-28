@@ -1,14 +1,17 @@
 package api;
 
 public class UserReq {
+
     private final String name;
     private final String email;
     private final String password;
+
 
     public UserReq(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
+
     }
 
     public String getName() {
@@ -31,4 +34,5 @@ public class UserReq {
                 ", password='" + password + '\'' +
                 '}';
     }
+
 }
